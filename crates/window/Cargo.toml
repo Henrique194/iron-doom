@@ -11,5 +11,5 @@ common = { path = "../common" }
 derive_more = { workspace = true }
 exit = { path = "../exit" }
 game-state = { path = "../game-state" }
-sdl2 = { workspace = true, features = ["unsafe_textures"] }
+sdl2 = { workspace = true, features = ["unsafe_textures", "bundled"] }
 wad = { path = "../wad" }
