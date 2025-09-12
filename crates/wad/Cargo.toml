@@ -9,10 +9,17 @@ bevy = { workspace = true }
 cfg-if = "1.0.0"
 cli = { path = "../cli" }
 common = { path = "../common" }
-derive_more = { workspace = true, features = ["into_iterator", "index"] }
 exit = { path = "../exit" }
-game-state = { path = "../game-state" }
 indexmap = "2.7.1"
+
+[dependencies.derive_more]
+workspace = true
+features = [
+    "into_iterator",
+    "index",
+    "deref",
+    "deref_mut"
+]
 
 [target.'cfg(windows)'.dependencies]
 windows = { version = "0.60.0", features = ["Win32_System_Registry"] }

@@ -5,11 +5,10 @@ edition = "2024"
 
 [dependencies]
 anyhow = { workspace = true }
-array-init = { workspace = true }
 bevy = { workspace = true }
 common = { path = "../common" }
 derive_more = { workspace = true }
 exit = { path = "../exit" }
 game-state = { path = "../game-state" }
-sdl2 = { workspace = true, features = ["unsafe_textures", "bundled"] }
+sdl2 = { workspace = true, features = ["unsafe_textures"] }
 wad = { path = "../wad" }

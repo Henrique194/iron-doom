@@ -4,12 +4,8 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-anyhow = { workspace = true }
 bevy = { workspace = true }
-common = { path = "../common" }
 derive_more = { workspace = true }
-exit = { path = "../exit" }
 game-state = { path = "../game-state" }
 rand = { path = "../rand" }
 window = { path = "../window" }
-wad = { path = "../wad" }

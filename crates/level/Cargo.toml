@@ -6,11 +6,8 @@ edition = "2024"
 [dependencies]
 anyhow = { workspace = true }
 bevy = { workspace = true }
-common = { path = "../common" }
-derive_more = { workspace = true, features = ["deref", "deref_mut"] }
 exit = { path = "../exit" }
 game-state = { path = "../game-state" }
 leafwing-input-manager = "0.16.0"
 moonshine-kind = { workspace = true }
 wad = { path = "../wad" }
-window = { path = "../window" }
