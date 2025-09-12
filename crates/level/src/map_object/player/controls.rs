@@ -59,7 +59,7 @@ impl PlayerAction {
                 RunBackward,
                 [
                     ButtonlikeChord::modified(Shift, KeyS),
-                    ButtonlikeChord::modified(Shift, KEY_UP),
+                    ButtonlikeChord::modified(Shift, KEY_DOWN),
                 ],
             )
             .with_one_to_many(
