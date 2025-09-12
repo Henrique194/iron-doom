@@ -1,9 +1,7 @@
 use bevy::prelude::*;
 use clap::Parser;
 use response_file::process_response_files;
-use std::collections::VecDeque;
-use std::env;
-use std::path::PathBuf;
+use std::{collections::VecDeque, env, path::PathBuf};
 
 mod response_file;
 
@@ -32,7 +30,7 @@ impl FromWorld for CommandLine {
     fn from_world(_world: &mut World) -> Self {
         let mut args: VecDeque<String> = env::args().collect();
         process_response_files(&mut args).unwrap();
-        
+
         CommandLine::parse_from(args)
     }
 }

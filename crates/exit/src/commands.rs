@@ -21,7 +21,7 @@ impl Command for ExitErrorCommand {
     fn apply(self, world: &mut World) {
         let error = self.0;
         world.send_event(Exit::Error(error));
-        
+
         let mut game_state = world.resource_mut::<NextState<GameState>>();
         game_state.set(GameState::Exiting);
         world.run_schedule(StateTransition);

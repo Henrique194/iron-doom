@@ -22,7 +22,7 @@ pub mod prelude {
         },
         palette::PaletteVariant,
         patch::{DrawPath, Patch},
-        wall_texture::{WallTextures, WallTexture},
+        wall_texture::{WallTexture, WallTextures},
         WadFile,
     };
 }

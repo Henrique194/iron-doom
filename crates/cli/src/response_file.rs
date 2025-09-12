@@ -1,6 +1,5 @@
 use anyhow::{bail, Result};
-use std::collections::VecDeque;
-use std::fs;
+use std::{collections::VecDeque, fs};
 
 pub fn process_response_files(args: &mut VecDeque<String>) -> Result<()> {
     handle_legacy_response_files(args)?;
@@ -49,7 +48,7 @@ fn load_response_files(args: &mut VecDeque<String>) -> Result<()> {
         if args.is_empty() {
             bail!("'--response' must be followed by a response file\n");
         }
-        
+
         let mut response_files = Vec::new();
         while let Some(next_arg) = args.pop_front() {
             if is_param(&next_arg) {
@@ -58,7 +57,7 @@ fn load_response_files(args: &mut VecDeque<String>) -> Result<()> {
             }
             response_files.push(next_arg);
         }
-        
+
         for file in response_files.iter().rev() {
             let response_file = ResponseFileParser::parse(file)?;
             // We push the new args from the response file into "args" instead
@@ -77,7 +76,6 @@ fn load_response_files(args: &mut VecDeque<String>) -> Result<()> {
     Ok(())
 }
 
-
 fn is_param(str: &str) -> bool {
     str.starts_with('-') && !str.contains(char::is_whitespace)
 }
@@ -85,7 +83,7 @@ fn is_param(str: &str) -> bool {
 /// A response file is just a text file that may store
 /// additional command line parameters.
 struct ResponseFile {
-    args: VecDeque<String>
+    args: VecDeque<String>,
 }
 
 struct ResponseFileParser;

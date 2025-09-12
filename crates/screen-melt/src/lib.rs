@@ -1,6 +1,6 @@
 use bevy::prelude::*;
 use events::InitMeltScreen;
-use game_state::{PlayingState, conditions::in_screen_melt_state};
+use game_state::{conditions::in_screen_melt_state, PlayingState};
 use schedules::{InitEndScreen, InitStartScreen};
 
 mod components;

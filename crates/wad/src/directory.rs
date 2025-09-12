@@ -1,7 +1,6 @@
 use crate::sys;
 use anyhow::Result;
-use std::path::Path;
-use std::{env, path::PathBuf};
+use std::{path::Path, {env, path::PathBuf}};
 
 pub static IWADS: &[&str; 2] = &["doom.wad", "doom1.wad"];
 
@@ -29,10 +28,10 @@ impl IwadDirs {
         if let Ok(path) = env::var("DOOMWADPATH") {
             iwad_dirs.add_path(&path, "");
         }
-        
+
         // Add OS specific directories.
         sys::add_dirs(&mut iwad_dirs);
-        
+
         Ok(iwad_dirs)
     }
 
@@ -50,20 +49,20 @@ impl IwadDirs {
             self.add_path_buf(path);
         }
     }
-    
+
     /// Name can either be the name of the IWAD or the absolute path to the IWAD.
     pub fn find_iwad(&self, name: &Path) -> Option<PathBuf> {
         if name.exists() {
             // Absolute path
             return Some(name.to_path_buf());
         }
-        
+
         for dir in &self.dirs {
             if let Some(iwad_path) = Self::has_iwad(dir, name) {
                 return Some(iwad_path);
             }
         }
-        
+
         None
     }
 

@@ -1,5 +1,5 @@
-use crate::util::{bytes_to_i32, bytes_to_str};
 use crate::header::WadHeader;
+use crate::util::{bytes_to_i32, bytes_to_str};
 use anyhow::{bail, Result};
 use std::slice::SliceIndex;
 

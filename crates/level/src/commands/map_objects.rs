@@ -1,9 +1,9 @@
 use crate::map_object::prelude::Camera;
 use crate::map_object::prelude::*;
 use bevy::prelude::*;
+use leafwing_input_manager::InputManagerBundle;
 use moonshine_kind::{Instance, SpawnInstance};
 use std::f32::consts;
-use leafwing_input_manager::InputManagerBundle;
 use wad::prelude::*;
 
 pub trait SpawnMapObjects {
@@ -22,7 +22,11 @@ impl SpawnMapObjects for Commands<'_, '_> {
             let map_obj = create_map_object(thing);
             let mut instance_cmds = self.spawn_instance(map_obj);
             if thing.thing_type == 1 {
-                instance_cmds.insert((Player, Camera::new(map_obj), InputManagerBundle::with_map(PlayerAction::default_map())));
+                instance_cmds.insert((
+                    Player,
+                    Camera::new(map_obj),
+                    InputManagerBundle::with_map(PlayerAction::default_map()),
+                ));
             }
             let instance = instance_cmds.instance();
 

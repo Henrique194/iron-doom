@@ -1,6 +1,5 @@
 use crate::resources::LevelMap;
-use bevy::ecs::system::SystemParam;
-use bevy::prelude::*;
+use bevy::{ecs::system::SystemParam, prelude::*};
 use moonshine_kind::Instance;
 use std::rc::Rc;
 

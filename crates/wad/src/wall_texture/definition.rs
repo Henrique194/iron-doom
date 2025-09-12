@@ -127,9 +127,9 @@ impl WallTextureDefinitionParser {
 pub struct PatchDescriptor {
     /// Horizontal offset of the patch relative to the upper-left of the texture.
     pub origin_x: i16,
-    /// Vertical offset of the patch relative to the upper-left of the texture. 
+    /// Vertical offset of the patch relative to the upper-left of the texture.
     pub origin_y: i16,
-    /// Patch number (as listed in PNAMES) to draw. 
+    /// Patch number (as listed in PNAMES) to draw.
     pub patch_num: usize,
 }
 

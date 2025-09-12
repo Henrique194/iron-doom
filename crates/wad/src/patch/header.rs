@@ -1,5 +1,5 @@
-use anyhow::{Result, bail};
 use crate::util::{bytes_to_i16, bytes_to_i32};
+use anyhow::{bail, Result};
 
 pub struct PatchHeader {
     pub width: usize,

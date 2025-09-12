@@ -1,6 +1,4 @@
-use std::ffi::{CStr, CString};
-use std::ptr;
-
+use std::{ffi::{CStr, CString}, ptr};
 use windows::{
     core::PCSTR,
     Win32::{

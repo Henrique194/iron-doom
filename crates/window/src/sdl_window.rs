@@ -15,10 +15,8 @@ pub struct SdlWindowPlugin;
 
 impl Plugin for SdlWindowPlugin {
     fn build(&self, app: &mut App) {
-        app.init_non_send_resource::<SdlWindow>().add_systems(
-            Last,
-            update_window.run_if(in_playing_state()),
-        );
+        app.init_non_send_resource::<SdlWindow>()
+            .add_systems(Last, update_window.run_if(in_playing_state()));
     }
 }
 

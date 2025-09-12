@@ -36,7 +36,7 @@ fn create_line_side(side: &MapSideDef, level_map: &LevelMap, wad: &WadFile) -> R
     let top_texture = get_texture(&side.top_texture, wad)?;
     let lower_texture = get_texture(&side.lower_texture, wad)?;
     let middle_texture = get_texture(&side.middle_texture, wad)?;
-    
+
     Ok(SideDef {
         x_offset: side.x_offset.into(),
         y_offset: side.y_offset.into(),

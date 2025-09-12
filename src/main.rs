@@ -4,8 +4,7 @@
 
 use bevy::{log::LogPlugin, prelude::*};
 use crates_plugins::CratesPlugins;
-use game_state::conditions::in_setup_state;
-use game_state::GameState;
+use game_state::{conditions::in_setup_state, GameState};
 
 mod crates_plugins;
 

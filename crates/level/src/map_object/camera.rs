@@ -24,7 +24,7 @@ impl Camera {
             view_frustum: ViewFrustum::new(),
         }
     }
-    
+
     pub fn update(&mut self, player: MapObject) {
         *self = Self::new(player);
     }
@@ -32,14 +32,14 @@ impl Camera {
     pub fn projection_plane(&self) -> ProjectionPlane {
         self.view_frustum.projection_plane
     }
-    
+
     pub fn find_scale(&self, point: Vec2) -> f32 {
         let proj_plane = self.projection_plane();
         let numerator = proj_plane.origin.dot(*proj_plane.normal);
         let denominator = proj_plane.normal.dot(point);
         numerator / denominator
     }
-    
+
     pub fn viewport_to_world(&self, segment: &LineSegment, x: usize) -> Vec2 {
         let proj_plane = self.projection_plane();
         let origin = proj_plane.origin;

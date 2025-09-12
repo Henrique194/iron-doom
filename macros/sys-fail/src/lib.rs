@@ -26,7 +26,7 @@ fn sys_fail_impl(mut function: syn::ItemFn) -> syn::Result<proc_macro2::TokenStr
     if !function.sig.inputs.is_empty() && !function.sig.inputs.trailing_punct() {
         function.sig.inputs.push_punct(syn::token::Comma::default());
     }
-    
+
     let params = &function.sig.inputs;
     let params_gen = &function.sig.generics.params;
     let where_gen = &function.sig.generics.where_clause;

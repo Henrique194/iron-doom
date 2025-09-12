@@ -39,7 +39,7 @@ impl MapThingsParser {
 
 /// Things represent players, monsters, pick-ups, and projectiles.
 /// They also represent obstacles, certain decorations, player start
-/// positions and teleport landing sites. 
+/// positions and teleport landing sites.
 #[derive(Debug)]
 pub struct MapThing {
     /// x position
@@ -47,10 +47,10 @@ pub struct MapThing {
 
     /// y position
     pub y: i16,
-    
+
     /// Thing angles represent arc degrees increasing counterclockwise from
     /// the east. The possible values are:
-    /// 
+    ///
     /// |  Compass point | Degrees |
     /// |----------------|---------|
     /// | East           | 0°      |
@@ -62,10 +62,10 @@ pub struct MapThing {
     /// | South          | 270°    |
     /// | South East     | 315°    |
     pub angle: i16,
-    
+
     /// DoomEd thing type
     pub thing_type: i16,
-    
+
     /// Flags
     pub options: i16,
 }

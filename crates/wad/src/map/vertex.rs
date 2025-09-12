@@ -15,7 +15,7 @@ impl MapVertexesParser {
         let Some(lump) = lumps_dir.get_index(vertexes_lump) else {
             bail!("Missing Vertexes Lump for Map Lump #{map_lump}");
         };
-        
+
         let mut vertexes = Vec::with_capacity(lump.size() / 4);
 
         for vertex_data in lump.data().chunks_exact(4) {

@@ -56,7 +56,7 @@ impl<T: Copy> Array2d<T> {
     pub fn copy_to_slice(&self, slice: &mut [T]) {
         slice.copy_from_slice(&self.data);
     }
-    
+
     pub fn copy_from(&mut self, src: &Array2d<T>) {
         self.data.copy_from_slice(&src.data);
     }

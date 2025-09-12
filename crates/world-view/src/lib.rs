@@ -7,8 +7,7 @@ use bevy::{
     prelude::*,
 };
 use game_state::conditions::in_level_state;
-use level::prelude::*;
-use level::prelude::Camera;
+use level::{prelude::Camera, prelude::*};
 use moonshine_kind::Instance;
 use wad::prelude::*;
 use window::ScreenBuffer;
@@ -93,18 +92,9 @@ fn render_segments(
         }
         let seg_inst = *segment;
         let segment = segment_query.get(segment.entity()).unwrap();
-        // if segment.v1().x == 1280.0 && segment.v1().y == -3552.0
-        //     && segment.v2().x == 1152.0 && segment.v2().y == -3648.0 {
-        //     println!("{:?}", segment.v1());
-        //     println!("{:?}", segment.v2());
-        // }
-        // println!("{:?}", segment.v1());
-        // println!("{:?}", segment.v2());
         let Some((x1, x2)) = camera.world_to_viewport(segment) else {
             continue;
         };
-        // println!("{:?}", segment.v1());
-        // println!("{:?}", segment.v2());
         // At this point, the segment is within the view frustum and projected to screen space.
         // However, it may still be occluded by previously rendered segments.
         let fragments = depth_clip.clip(segment, x1, x2);

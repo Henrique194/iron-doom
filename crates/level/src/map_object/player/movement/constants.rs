@@ -14,6 +14,6 @@ pub(super) const FAST_STRAFE: f32 = 1.25;
 pub(super) const SLOW_TURN_TICS: u32 = 6;
 pub(super) const SLOW_TURN: f32 = TURN / 2.0;
 
-/// Equal to 2π * (640/2<sup>32</sup>).
+/// Equal to 2π * (640/2<sup>16</sup>).
 pub(super) const TURN: f32 = 0.06135923;
 pub(super) const FAST_TURN: f32 = 2.0 * TURN;

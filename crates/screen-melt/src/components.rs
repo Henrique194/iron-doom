@@ -16,7 +16,7 @@ pub struct Column {
     ///
     /// The `position` value then determines the boundary between these two buffers.
     position: usize,
-    
+
     /// The time to wait before the column starts moving.
     /// A countdown timer used to delay the column's movement.
     wait: u8,

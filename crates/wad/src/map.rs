@@ -1,5 +1,5 @@
 use crate::lump::LumpsDirectory;
-use anyhow::{Result, bail};
+use anyhow::{bail, Result};
 use bevy::utils::HashMap;
 use block_map::{MapBlockMap, MapBlockMapParser};
 use derive_more::{Deref, DerefMut};

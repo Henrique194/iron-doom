@@ -26,7 +26,7 @@ pub enum Exit {
 
 pub trait ExitCommands {
     fn exit(&mut self);
-    
+
     fn exit_error(&mut self, error: Error);
 }
 
@@ -34,7 +34,7 @@ impl ExitCommands for Commands<'_, '_> {
     fn exit(&mut self) {
         self.queue(ExitSuccessCommand);
     }
-    
+
     fn exit_error(&mut self, error: Error) {
         self.queue(ExitErrorCommand(error));
     }
