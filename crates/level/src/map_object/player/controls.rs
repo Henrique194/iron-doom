@@ -29,7 +29,10 @@ impl PlayerAction {
         use PlayerAction::*;
 
         InputMap::default()
-            .with_multiple([(TurnLeft, KEY_LEFT), (TurnRight, KEY_RIGHT)])
+            .with_multiple([
+                (TurnLeft, ButtonlikeChord::from_single(KEY_LEFT)),
+                (TurnRight, ButtonlikeChord::from_single(KEY_RIGHT)),
+            ])
             .with_multiple([
                 (FastLeftTurn, ButtonlikeChord::modified(Shift, KEY_LEFT)),
                 (FastRightTurn, ButtonlikeChord::modified(Shift, KEY_RIGHT)),
