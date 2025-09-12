@@ -54,17 +54,15 @@ fn update_angle(
             angle_turn -= SLOW_TURN;
         }
     } else {
-        if action_state.pressed(&PlayerAction::TurnLeft) {
-            angle_turn += TURN;
-        }
         if action_state.pressed(&PlayerAction::FastLeftTurn) {
             angle_turn += FAST_TURN;
-        }
-        if action_state.pressed(&PlayerAction::TurnRight) {
-            angle_turn -= TURN;
+        } else if action_state.pressed(&PlayerAction::TurnLeft) {
+            angle_turn += TURN;
         }
         if action_state.pressed(&PlayerAction::FastRightTurn) {
             angle_turn -= FAST_TURN;
+        } else if action_state.pressed(&PlayerAction::TurnRight) {
+            angle_turn -= TURN;
         }
     }
 
